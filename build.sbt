@@ -1,7 +1,7 @@
 /*
   General Scala attributes
  */
-scalaVersion := "2.12.1"
+scalaVersion := "2.13.7"
 
 /*
   General project attributes
@@ -17,8 +17,8 @@ organizationHomepage := Some(url("http://www.codecentric.de"))
   Project dependencies
  */
 libraryDependencies ++= Seq(
-  "org.springframework.boot" % "spring-boot-starter-web" % "1.5.4.RELEASE",
-  "org.springframework.boot" % "spring-boot-configuration-processor" % "1.5.4.RELEASE"
+  "org.springframework.boot" % "spring-boot-starter-web" % "2.5.6",
+  "org.springframework.boot" % "spring-boot-configuration-processor" % "2.5.6"
 )
 
 /*
@@ -29,7 +29,7 @@ libraryDependencies ++= Seq(
 enablePlugins(JavaAppPackaging, AshScriptPlugin)
 
 // set the main entrypoint to the application that is used in startup scripts
-mainClass in Compile := Some("de.codecentric.microservice.MyServiceApplication")
+Compile / mainClass := Some("de.codecentric.microservice.MyServiceApplication")
 
 // the Docker image to base on (alpine is smaller than the debian based one (120 vs 650 MB)
 dockerBaseImage := "openjdk:8-jre-alpine"
